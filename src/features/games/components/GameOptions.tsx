@@ -19,6 +19,7 @@ interface Props {
 
 export const GameOptions = ({ gameId, hostId }: Props) => {
 
+  const CLIENT_URL = import.meta.env.VITE_CLIENT_URL;
   const { mutate: restartGame } = useRestartGame()
   const { player } = usePlayerStore()
   const { openModal } = useModal()
@@ -45,7 +46,7 @@ export const GameOptions = ({ gameId, hostId }: Props) => {
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(`http://localhost:5173/rooms/${gameId}/invite`);
+      await navigator.clipboard.writeText(`${CLIENT_URL}/rooms/${gameId}/invite`);
       addToast('Url Copied', "success")
     } catch (error) {
       console.error('Error al copiar el enlace:', error);

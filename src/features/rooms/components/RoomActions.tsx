@@ -21,7 +21,7 @@ interface Props {
 }
 
 export const RoomActions = ({ room }: Props) => {
-
+  const CLIENT_URL = import.meta.env.VITE_CLIENT_URL;
   const { player } = usePlayerStore()
   const { mutate: leaveRoom } = useLeaveRoom()
   const { mutate: startGame, isPending: startGameLoading } = useStartGame()
@@ -49,7 +49,7 @@ export const RoomActions = ({ room }: Props) => {
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(`http://localhost:5173/rooms/${room.id}/invite`);
+      await navigator.clipboard.writeText(`${CLIENT_URL}/rooms/${room.id}/invite`);
       addToast('Url Copied', "success")
     } catch (error) {
       console.error('Error al copiar el enlace:', error);
