@@ -1,6 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { rollDice } from "../services/roll-dice"
-import { Phase, type Game } from "../models/game.interface"
 import type { Room } from "../../rooms/models/room.interface"
 import { useParams } from "react-router"
 

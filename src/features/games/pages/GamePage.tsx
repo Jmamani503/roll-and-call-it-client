@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react"
 import { GamePageLoader } from "../../games/components/GamePageLoader"
 import { useGetRoom } from "../../rooms/hooks/useGetRoom"
 import { RoomNotFound } from "../../rooms/pages/RoomNotFound"
-import { useModal } from "@/shared/hooks/useModal"
-import { GameBoard, GameNotification, GameOptions, GameTableScore } from "../components"
+import { GameBoard, GameOptions, GameTableScore } from "../components"
 
 export const GamePage = () => {
 
